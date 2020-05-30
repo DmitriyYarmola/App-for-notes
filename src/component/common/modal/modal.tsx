@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Modal } from 'antd'
 import 'antd/dist/antd.css'
 
@@ -9,6 +9,7 @@ type PropsType = {
 	>
 	title: string
 	contentModal: string
+	accessDelete: () => void
 }
 
 export const ModalWindow: React.FC<PropsType> = ({
@@ -16,12 +17,13 @@ export const ModalWindow: React.FC<PropsType> = ({
 	setVisibleModal,
 	title,
 	contentModal,
+	accessDelete,
 }) => {
 	return (
 		<Modal
 			title={title}
 			visible={visibleModal}
-			// onOk={console.log('da')}
+			onOk={accessDelete}
 			onCancel={() => setVisibleModal(false)}
 		>
 			<p>{contentModal}</p>

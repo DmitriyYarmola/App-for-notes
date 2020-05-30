@@ -1,20 +1,29 @@
 import React, { useState } from 'react'
 import { Button } from 'antd'
-import './contentView.sass'
-import { ModalWindow } from '../common/modal/modal'
+import { ModalWindow } from '../../common/modal/modal'
+import { useDispatch } from 'react-redux'
+import { Actions } from '../../../store/actions'
 
 type PropsType = {
 	title: string
 	content: string
+	setEditMode: React.Dispatch<React.SetStateAction<boolean>>
+	id: string
 }
 
-export const ContentView: React.FC<PropsType> = ({
+export const View: React.FC<PropsType> = ({
 	title,
 	content,
+	setEditMode,
+	id,
 }) => {
+	/* ===UseState=== */
 	const [visibleModal, setVisibleModal] = useState(false)
 	const [titleModal, setTitleModal] = useState('')
 	const [contentModal, setContentModal] = useState('')
+
+	/* ===UseDispatch=== */
+	const dispatch = useDispatch()
 
 	const onDeleteNote = () => {
 		setTitleModal('Delete the note')
@@ -22,7 +31,14 @@ export const ContentView: React.FC<PropsType> = ({
 		setVisibleModal(true)
 	}
 
-	const onEditNote = () => {}
+	const onEditNote = () => {
+		setEditMode(true)
+	}
+
+	const accessDelete = () => {
+		dispatch(Actions.deleteNote(id))
+		setVisibleModal(false)
+	}
 
 	return (
 		<div className=''>
@@ -47,6 +63,7 @@ export const ContentView: React.FC<PropsType> = ({
 				setVisibleModal={setVisibleModal}
 				title={titleModal}
 				contentModal={contentModal}
+				accessDelete={accessDelete}
 			/>
 		</div>
 	)
