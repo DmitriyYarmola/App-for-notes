@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import SimpleMDE from 'react-simplemde-editor'
-import { Input, Button } from 'antd'
+import { Input } from '../../../Atoms/Input'
+import { Button } from '../../../Atoms/Button'
 import { useDispatch } from 'react-redux'
-import { Actions } from '../../store/actions'
+import { Actions } from '../../../../store/actions'
 import nextId from 'react-id-generator'
+import { Table } from '../../../Molecules/Table'
 import 'easymde/dist/easymde.min.css'
 import './redactor.sass'
 
@@ -45,7 +46,7 @@ export const Redactor: React.FC<PropsType> = ({
 	const createNewNote = (
 		e: React.MouseEvent<HTMLElement, MouseEvent>
 	) => {
-		if (inputContent !== '' && simpleContent !== '') {
+		if (inputContent && simpleContent) {
 			dispatch(
 				Actions.addNote(
 					inputContent,
@@ -68,29 +69,29 @@ export const Redactor: React.FC<PropsType> = ({
 	return (
 		<>
 			<Input
-				placeholder='Title of note'
-				className='simple-input'
+				placeholder={'Title of note'}
+				className={'simple-input'}
 				onChange={onInputContent}
-				required
 				value={inputContent}
 			/>
-			<SimpleMDE
-				id='simple-mde'
+			<Table
 				onChange={onSimpleContent}
 				value={simpleContent}
-				options={{
-					autofocus: true,
-					spellChecker: false,
-				}}
 			/>
 			{isCreate ? (
-				<Button type='dashed' onClick={createNewNote}>
-					Create
-				</Button>
+				<Button
+					type='dashed'
+					onClick={createNewNote}
+					content={'Create'}
+					danger={false}
+				/>
 			) : (
-				<Button type='dashed' onClick={saveNote}>
-					Save
-				</Button>
+				<Button
+					type='dashed'
+					onClick={saveNote}
+					content={'Save'}
+					danger={false}
+				/>
 			)}
 		</>
 	)

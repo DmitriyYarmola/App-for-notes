@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { Button } from 'antd'
-import { ModalWindow } from '../../common/modal/modal'
+import { Modal } from '../../../Molecules/Modal'
+import { Button } from '../../../Atoms/Button'
 import { useDispatch } from 'react-redux'
-import { Actions } from '../../../store/actions'
+import { Actions } from '../../../../store/actions'
+import './view.sass'
 
 type PropsType = {
 	title: string
@@ -44,21 +45,23 @@ export const View: React.FC<PropsType> = ({
 		<div className=''>
 			<div className='option-button'>
 				<Button
-					type='primary'
-					danger
+					type={'primary'}
 					onClick={onDeleteNote}
-				>
-					Delete
-				</Button>
-				<Button type='primary' onClick={onEditNote}>
-					Edit
-				</Button>
+					content={'Delete'}
+					danger={true}
+				/>
+				<Button
+					type={'primary'}
+					onClick={onEditNote}
+					content={'Edit'}
+					danger={false}
+				/>
 			</div>
 			<div>
 				<h1>{title}</h1>
 				<div className=''>{content}</div>
 			</div>
-			<ModalWindow
+			<Modal
 				visibleModal={visibleModal}
 				setVisibleModal={setVisibleModal}
 				title={titleModal}

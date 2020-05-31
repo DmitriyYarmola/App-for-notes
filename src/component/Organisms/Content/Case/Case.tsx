@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './contentView.sass'
-import { View } from './view/View'
-import { Redactor } from '../redactor/Redactor'
+import { View } from '../View/View'
+import { Redactor } from '../Edit/Redactor'
 
 type PropsType = {
 	title: string
@@ -9,7 +9,7 @@ type PropsType = {
 	id: string
 }
 
-export const ContentView: React.FC<PropsType> = ({
+export const Case: React.FC<PropsType> = ({
 	title,
 	content,
 	id,

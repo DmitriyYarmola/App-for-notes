@@ -1,7 +1,7 @@
 import React from 'react'
-import { SideBar } from './component/sideBar/SideBar'
+import { SideBar } from './component/Organisms/SideBar'
 import './App.sass'
-import { ContentSection } from './component/conententSection/ContentSection'
+import { NoteContent } from './component/Organisms/NoteContent'
 
 function App() {
 	return (
@@ -9,7 +9,7 @@ function App() {
 			<div className='container'>
 				<div>
 					<SideBar />
-					<ContentSection />
+					<NoteContent />
 				</div>
 			</div>
 		</div>

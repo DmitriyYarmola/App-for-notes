@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal } from 'antd'
+import { Modal as ModalA } from 'antd'
 import 'antd/dist/antd.css'
 
 type PropsType = {
@@ -12,7 +12,7 @@ type PropsType = {
 	accessDelete: () => void
 }
 
-export const ModalWindow: React.FC<PropsType> = ({
+export const Modal: React.FC<PropsType> = ({
 	visibleModal,
 	setVisibleModal,
 	title,
@@ -20,13 +20,13 @@ export const ModalWindow: React.FC<PropsType> = ({
 	accessDelete,
 }) => {
 	return (
-		<Modal
+		<ModalA
 			title={title}
 			visible={visibleModal}
 			onOk={accessDelete}
 			onCancel={() => setVisibleModal(false)}
 		>
 			<p>{contentModal}</p>
-		</Modal>
+		</ModalA>
 	)
 }
