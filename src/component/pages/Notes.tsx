@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import { SideBar } from '../Organisms/SideBar'
-import { NoteContent } from '../Organisms/NoteContent'
+import { SideBar } from './../Ui/Templates/SideBar/index'
+import { NoteContent } from '../Ui/Templates/ContentNote/index'
 import { useSelector, useDispatch } from 'react-redux'
-import { AppStateType } from '../../../store/store'
-import { Actions } from '../../../store/actions'
+import { AppStateType } from '../features/Note/models/store'
+import { Actions } from '../features/Note/models/actions'
 
 export const Notes = () => {
 	const notes = useSelector((state: AppStateType) => state.notesReducer.notes)

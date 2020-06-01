@@ -1,8 +1,8 @@
 import React from 'react'
-import { Layout } from 'antd'
 import { Route, Switch } from 'react-router-dom'
-import { Redactor } from './Content/Edit/Editor'
-import { List } from './Content/List'
+import { List } from '../../../features/Note/List/index'
+import { Edit } from '../../../features/Note/Edit/index'
+import { Layout } from 'antd'
 const { Content } = Layout
 
 export const NoteContent = () => {
@@ -22,7 +22,7 @@ export const NoteContent = () => {
 						<Switch>
 							<Route
 								path='/create'
-								render={() => <Redactor isCreate={true} title={''} content={''} />}
+								render={() => <Edit isCreate={true} title={''} content={''} />}
 							/>
 							<List />
 						</Switch>

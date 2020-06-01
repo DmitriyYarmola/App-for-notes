@@ -1,11 +1,11 @@
 import React from 'react'
 import { Layout, Menu } from 'antd'
-import nextId from 'react-id-generator'
-import 'antd/dist/antd.css'
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { AppStateType } from '../../../store/store'
-import './sidebar.sass'
+import { AppStateType } from '../../../features/Note/models/store'
+import nextId from 'react-id-generator'
+import 'antd/dist/antd.css'
+import './style.sass'
 
 const { Sider } = Layout
 

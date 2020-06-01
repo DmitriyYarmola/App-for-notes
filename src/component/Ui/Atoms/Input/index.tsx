@@ -1,6 +1,6 @@
 import React from 'react'
 import { Input as InputA } from 'antd'
-
+import './style.sass'
 type PropsType = {
 	placeholder: string
 	className: string
@@ -17,7 +17,7 @@ export const Input: React.FC<PropsType> = ({
 	return (
 		<InputA
 			placeholder={placeholder}
-			className={className}
+			className={`input ${className}`}
 			onChange={onChange}
 			value={value}
 			required

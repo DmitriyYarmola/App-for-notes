@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './global.sass'
 import { Provider } from 'react-redux'
-import { BrowserRouter, HashRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import App from './App'
-import { store } from './store/store'
+import { store } from './component/features/Note/models/store'
 import './backend/index'
 
 ReactDOM.render(

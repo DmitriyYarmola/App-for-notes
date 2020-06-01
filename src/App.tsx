@@ -1,6 +1,6 @@
-import React  from 'react'
+import React from 'react'
 import './App.sass'
-import { Notes } from './component/Ui/Templates/Notes'
+import { Notes } from './component/pages/Notes'
 
 function App() {
 	return (

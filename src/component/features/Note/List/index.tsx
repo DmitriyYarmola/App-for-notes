@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { AppStateType } from '../../../../store/store'
+import { AppStateType } from '../models/store'
 import { Route } from 'react-router-dom'
-import { Case } from './Case/Case'
+import { Case } from '../Case/index'
 
 export const List = () => {
 	const notes = useSelector((state: AppStateType) => state.notesReducer.notes)

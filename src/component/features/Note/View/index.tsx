@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
-import { Modal } from '../../../Molecules/Modal'
-import { Button } from '../../../Atoms/Button'
 import { useDispatch } from 'react-redux'
-import { Actions } from '../../../../../store/actions'
-import './view.sass'
+import { Actions } from '../models/actions'
 import { message } from 'antd'
 import { useHistory } from 'react-router-dom'
-
+import { Viewer } from '../../../Ui/Organisms/Content/Viewer/index'
 type PropsType = {
 	title: string
 	content: string
@@ -44,27 +41,16 @@ export const View: React.FC<PropsType> = ({ title, content, setEditMode, id }) =
 	}
 
 	return (
-		<>
-			<div className='option-button'>
-				<Button
-					type={'primary'}
-					onClick={onDeleteNote}
-					content={'Delete'}
-					danger={true}
-				/>
-				<Button type={'primary'} onClick={onEditNote} content={'Edit'} danger={false} />
-			</div>
-			<div>
-				<h1>{title}</h1>
-				<div className=''>{content}</div>
-			</div>
-			<Modal
-				visibleModal={visibleModal}
-				setVisibleModal={setVisibleModal}
-				title={titleModal}
-				contentModal={contentModal}
-				accessDelete={accessDelete}
-			/>
-		</>
+		<Viewer
+			title={title}
+			content={content}
+			onDelete={onDeleteNote}
+			onEdit={onEditNote}
+			visibleModal={visibleModal}
+			setVisibleModal={setVisibleModal}
+			titleModal={titleModal}
+			contentModal={contentModal}
+			accessDelete={accessDelete}
+		/>
 	)
 }

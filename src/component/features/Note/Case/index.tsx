@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import './contentView.sass'
-import { View } from '../View/View'
-import { Redactor } from '../Edit/Editor'
+import { View } from '../View'
+import { Edit } from './../Edit/index'
+import './style.sass'
 
 type PropsType = {
 	title: string
@@ -11,11 +11,10 @@ type PropsType = {
 
 export const Case: React.FC<PropsType> = ({ title, content, id }) => {
 	const [editMode, setEditMode] = useState(false)
-
 	return (
 		<>
 			{editMode ? (
-				<Redactor
+				<Edit
 					isCreate={false}
 					title={title}
 					content={content}

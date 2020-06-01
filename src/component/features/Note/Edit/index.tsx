@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
-import { Input } from '../../../Atoms/Input'
-import { Button } from '../../../Atoms/Button'
 import { useDispatch } from 'react-redux'
-import { Actions } from '../../../../../store/actions'
-import nextId from 'react-id-generator'
-import { Table } from '../../../Molecules/Table'
-import 'easymde/dist/easymde.min.css'
-import './redactor.sass'
+import { Actions } from '../models/actions'
 import { message } from 'antd'
 import { useHistory } from 'react-router-dom'
+import { Editor } from '../../../Ui/Organisms/Content/Editor/index'
+import nextId from 'react-id-generator'
+import 'easymde/dist/easymde.min.css'
 
 type PropsType = {
 	isCreate: boolean
@@ -17,7 +14,7 @@ type PropsType = {
 	setEditMode?: React.Dispatch<React.SetStateAction<boolean>>
 	id?: string
 }
-export const Redactor: React.FC<PropsType> = ({
+export const Edit: React.FC<PropsType> = ({
 	isCreate,
 	title,
 	content,
@@ -60,19 +57,16 @@ export const Redactor: React.FC<PropsType> = ({
 	}
 
 	return (
-		<>
-			<Input
-				placeholder={'Title of note'}
-				className={'simple-input'}
-				onChange={onInputContent}
-				value={inputContent}
-			/>
-			<Table onChange={onSimpleContent} value={simpleContent} />
-			{isCreate ? (
-				<Button type='dashed' onClick={createNewNote} content={'Create'} danger={false} />
-			) : (
-				<Button type='dashed' onClick={saveNote} content={'Save'} danger={false} />
-			)}
-		</>
+		<Editor
+			isCreate={isCreate}
+			inputContent={inputContent}
+			inputContentChange={onInputContent}
+			tableContentChange={onSimpleContent}
+			tableContent={simpleContent}
+			clickCreate={createNewNote}
+			clickSave={saveNote}
+			inputClassName={'title-editor'}
+			inputPHolder={'Title your note'}
+		/>
 	)
 }

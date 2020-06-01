@@ -1,7 +1,7 @@
 import React from 'react'
 import { MenuItem } from '../Atoms/MenuItem'
 import { useSelector } from 'react-redux'
-import { AppStateType } from '../../../store/store'
+import { AppStateType } from '../../features/Note/models/store'
 
 type PropsType = {}
 
