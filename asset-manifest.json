@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/EnemyDeaD/App-for-notes/static/css/main.c81e6127.chunk.css",
+    "main.js": "/EnemyDeaD/App-for-notes/static/js/main.20ac477c.chunk.js",
+    "main.js.map": "/EnemyDeaD/App-for-notes/static/js/main.20ac477c.chunk.js.map",
+    "runtime-main.js": "/EnemyDeaD/App-for-notes/static/js/runtime-main.d20e3480.js",
+    "runtime-main.js.map": "/EnemyDeaD/App-for-notes/static/js/runtime-main.d20e3480.js.map",
+    "static/css/2.0b589c22.chunk.css": "/EnemyDeaD/App-for-notes/static/css/2.0b589c22.chunk.css",
+    "static/js/2.3f8ff7de.chunk.js": "/EnemyDeaD/App-for-notes/static/js/2.3f8ff7de.chunk.js",
+    "static/js/2.3f8ff7de.chunk.js.map": "/EnemyDeaD/App-for-notes/static/js/2.3f8ff7de.chunk.js.map",
+    "index.html": "/EnemyDeaD/App-for-notes/index.html",
+    "precache-manifest.aa1e74a9e835b5d9e4ae38a02d9199ca.js": "/EnemyDeaD/App-for-notes/precache-manifest.aa1e74a9e835b5d9e4ae38a02d9199ca.js",
+    "service-worker.js": "/EnemyDeaD/App-for-notes/service-worker.js",
+    "static/css/2.0b589c22.chunk.css.map": "/EnemyDeaD/App-for-notes/static/css/2.0b589c22.chunk.css.map",
+    "static/css/main.c81e6127.chunk.css.map": "/EnemyDeaD/App-for-notes/static/css/main.c81e6127.chunk.css.map",
+    "static/js/2.3f8ff7de.chunk.js.LICENSE.txt": "/EnemyDeaD/App-for-notes/static/js/2.3f8ff7de.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d20e3480.js",
+    "static/css/2.0b589c22.chunk.css",
+    "static/js/2.3f8ff7de.chunk.js",
+    "static/css/main.c81e6127.chunk.css",
+    "static/js/main.20ac477c.chunk.js"
+  ]
+}
