@@ -1,17 +1,11 @@
-import React from 'react'
-import { SideBar } from './component/Organisms/SideBar'
+import React  from 'react'
 import './App.sass'
-import { NoteContent } from './component/Organisms/NoteContent'
+import { Notes } from './component/Ui/Templates/Notes'
 
 function App() {
 	return (
 		<div className='wrapper'>
-			<div className='container'>
-				<div>
-					<SideBar />
-					<NoteContent />
-				</div>
-			</div>
+			<Notes />
 		</div>
 	)
 }

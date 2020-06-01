@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './contentView.sass'
 import { View } from '../View/View'
-import { Redactor } from '../Edit/Redactor'
+import { Redactor } from '../Edit/Editor'
 
 type PropsType = {
 	title: string
@@ -9,11 +9,7 @@ type PropsType = {
 	id: string
 }
 
-export const Case: React.FC<PropsType> = ({
-	title,
-	content,
-	id,
-}) => {
+export const Case: React.FC<PropsType> = ({ title, content, id }) => {
 	const [editMode, setEditMode] = useState(false)
 
 	return (
@@ -27,12 +23,7 @@ export const Case: React.FC<PropsType> = ({
 					setEditMode={setEditMode}
 				/>
 			) : (
-				<View
-					title={title}
-					content={content}
-					setEditMode={setEditMode}
-					id={id}
-				/>
+				<View title={title} content={content} setEditMode={setEditMode} id={id} />
 			)}
 		</>
 	)

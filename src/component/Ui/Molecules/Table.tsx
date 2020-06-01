@@ -6,10 +6,7 @@ type PropsType = {
 	value: string
 }
 
-export const Table: React.FC<PropsType> = ({
-	onChange,
-	value,
-}) => {
+export const Table: React.FC<PropsType> = ({ onChange, value }) => {
 	return (
 		<SimpleMDE
 			onChange={onChange}

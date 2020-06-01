@@ -3,7 +3,7 @@ import { InferAtionsType } from './store'
 export const ADD_NOTE = 'ADD_NOTE'
 export const SAVE_NOTE = 'SAVE_NOTE'
 export const DELETE_NOTE = 'DELTE_NOTE'
-
+export const GET_NOTES = 'GET_NOTES'
 export type ActionsType = InferAtionsType<typeof Actions>
 
 export type PayloadType = {
@@ -27,5 +27,10 @@ export const Actions = {
 		({
 			type: DELETE_NOTE,
 			payload: { id },
+		} as const),
+	getNote: (notes: Array<PayloadType>) =>
+		({
+			type: GET_NOTES,
+			payload: notes,
 		} as const),
 }

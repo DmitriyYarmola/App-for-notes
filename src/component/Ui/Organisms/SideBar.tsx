@@ -1,24 +1,21 @@
 import React from 'react'
 import { Layout, Menu } from 'antd'
-import { MenuList } from '../Molecules/MenuList'
-import { MenuItem } from '../Atoms/MenuItem'
 import nextId from 'react-id-generator'
 import 'antd/dist/antd.css'
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { AppStateType } from '../../store/store'
+import { AppStateType } from '../../../store/store'
+import './sidebar.sass'
 
 const { Sider } = Layout
 
 export const SideBar = () => {
-	const notes = useSelector(
-		(state: AppStateType) => state.notesReducer.notes
-	)
+	const notes = useSelector((state: AppStateType) => state.notesReducer.notes)
 
 	const notesList = notes.map((note) => {
 		return (
 			<Menu.Item key={note.id}>
-				<NavLink to={note.id} className={'note-item'}>
+				<NavLink to={note.id} className={'note-item'} activeClassName='active'>
 					{note.title}
 				</NavLink>
 			</Menu.Item>
@@ -34,16 +31,9 @@ export const SideBar = () => {
 				left: 0,
 			}}
 		>
-			<Menu
-				theme='dark'
-				mode='inline'
-				defaultSelectedKeys={['4']}
-			>
+			<Menu theme='dark' mode='inline' defaultSelectedKeys={['4']}>
 				<Menu.Item key={nextId()}>
-					<NavLink
-						to={'/create'}
-						className='create-note_item'
-					>
+					<NavLink to={'/create'} className='create-note_item'>
 						Create New Note
 					</NavLink>
 				</Menu.Item>

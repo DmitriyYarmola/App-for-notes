@@ -4,6 +4,7 @@ import {
 	ActionsType,
 	PayloadType,
 	SAVE_NOTE,
+	GET_NOTES,
 } from './actions'
 
 let initialState = {
@@ -12,11 +13,14 @@ let initialState = {
 
 type InitialStateType = typeof initialState
 
-export const Reducer = (
-	state = initialState,
-	action: ActionsType
-): InitialStateType => {
+export const Reducer = (state = initialState, action: ActionsType): InitialStateType => {
+	console.log(action.payload)
 	switch (action.type) {
+		case GET_NOTES:
+			return {
+				...state,
+				notes: action.payload,
+			}
 		case ADD_NOTE:
 			return {
 				...state,
@@ -27,20 +31,14 @@ export const Reducer = (
 				...state,
 				notes: [
 					...state.notes.map((item) => {
-						return item.id === action.payload.id
-							? action.payload
-							: item
+						return item.id === action.payload.id ? action.payload : item
 					}),
 				],
 			}
 		case DELETE_NOTE:
 			return {
 				...state,
-				notes: [
-					...state.notes.filter(
-						(note) => note.id !== action.payload.id
-					),
-				],
+				notes: [...state.notes.filter((note) => note.id !== action.payload.id)],
 			}
 		default:
 			return state

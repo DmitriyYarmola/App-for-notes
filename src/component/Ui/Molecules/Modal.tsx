@@ -4,9 +4,7 @@ import 'antd/dist/antd.css'
 
 type PropsType = {
 	visibleModal: boolean
-	setVisibleModal: React.Dispatch<
-		React.SetStateAction<boolean>
-	>
+	setVisibleModal: React.Dispatch<React.SetStateAction<boolean>>
 	title: string
 	contentModal: string
 	accessDelete: () => void

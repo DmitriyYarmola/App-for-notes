@@ -9,11 +9,7 @@ type PropsType = {
 	navTo: string
 }
 
-export const MenuItem: React.FC<PropsType> = ({
-	id,
-	title,
-	navTo,
-}) => {
+export const MenuItem: React.FC<PropsType> = ({ id, title, navTo }) => {
 	return (
 		<Menu.Item key={id}>
 			<NavLink to={navTo} className={title}>
