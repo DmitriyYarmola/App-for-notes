@@ -14,7 +14,6 @@ let initialState = {
 type InitialStateType = typeof initialState
 
 export const Reducer = (state = initialState, action: ActionsType): InitialStateType => {
-	console.log(action.payload)
 	switch (action.type) {
 		case GET_NOTES:
 			return {

@@ -6,8 +6,6 @@ import { Case } from './Case/Case'
 
 export const List = () => {
 	const notes = useSelector((state: AppStateType) => state.notesReducer.notes)
-
-	console.log(notes)
 	const notesContentList = notes.map((note) => (
 		<Route
 			path={`/${note.id}`}

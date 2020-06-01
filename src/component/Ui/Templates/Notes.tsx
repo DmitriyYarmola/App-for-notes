@@ -10,9 +10,9 @@ export const Notes = () => {
 	const dispatch = useDispatch()
 
 	useEffect(() => {
-		const items = localStorage.getItem('notes') || ''
-		dispatch(Actions.getNote(JSON.parse(items)))
-	}, [])
+		const items = localStorage.getItem('notes')
+		if (items) dispatch(Actions.getNote(JSON.parse(items)))
+	}, [dispatch])
 
 	useEffect(() => {
 		localStorage.setItem('notes', JSON.stringify(notes))
