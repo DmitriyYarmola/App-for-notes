@@ -36,7 +36,7 @@ export const getAndDisplayNotes = (db) => {
 		} else {
 			// Если у нас нулевой курсор, это означает, что мы получили
 			// все данные, поэтому отображаем заметки, которые мы получили.
-			console.log(allNotes)
+			// console.log(allNotes)
 		}
 	}
 

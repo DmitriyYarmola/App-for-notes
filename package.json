@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://enemydead.github.io/App-for-notes",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -15,6 +16,7 @@
     "antd": "^4.2.5",
     "easymde": "^2.10.1",
     "formik": "^2.1.4",
+    "gh-pages": "^3.0.0",
     "nanoid": "^3.1.9",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -32,7 +34,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "eslint-check": "eslint --print-config src/App.tsx | eslint-config-prettier-check"
+    "eslint-check": "eslint --print-config src/App.tsx | eslint-config-prettier-check",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
