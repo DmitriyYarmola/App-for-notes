@@ -12,6 +12,7 @@ const { Sider } = Layout
 
 export const SideBar = () => {
 	const notes = useSelector((state: AppStateType) => state.notesReducer.notes)
+
 	const [inputContent, setInputContent] = useState('')
 
 	const notesList = notes.map((note) => {

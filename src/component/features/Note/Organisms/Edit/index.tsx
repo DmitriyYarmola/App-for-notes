@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Actions } from '../models/actions'
+import { Actions } from '../../models/actions'
 import { message } from 'antd'
 import { useHistory } from 'react-router-dom'
-import { Editor } from '../../../Ui/Organisms/Content/Editor/index'
+import { Editor } from '../../../../Ui/Organisms/Content/Editor/index'
 import 'easymde/dist/easymde.min.css'
 
 type PropsType = {

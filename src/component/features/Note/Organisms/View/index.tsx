@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Actions } from '../models/actions'
+import { Actions } from '../../models/actions'
 import { message } from 'antd'
 import { useHistory } from 'react-router-dom'
-import { Viewer } from '../../../Ui/Organisms/Content/Viewer/index'
+import { Viewer } from '../../../../Ui/Organisms/Content/Viewer/index'
 type PropsType = {
 	title: string
 	content: string

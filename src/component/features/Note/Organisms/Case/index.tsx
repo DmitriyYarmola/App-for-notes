@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { View } from '../View'
-import { Edit } from './../Edit/index'
+import { Edit } from '../Edit/index'
 import './style.sass'
 
 type PropsType = {
