@@ -40,8 +40,7 @@ export const Edit: React.FC<PropsType> = ({
 	}
 
 	const createNewNote = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
-		let noteId = nextId()
-		console.log(noteId)
+		let noteId = Date.now().toString()
 		if (inputContent && simpleContent) {
 			dispatch(Actions.addNote(inputContent, simpleContent, noteId))
 			history.push(noteId)
