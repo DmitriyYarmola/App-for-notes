@@ -10,18 +10,21 @@ export type PayloadType = {
 	title: string
 	content: string
 	id: string
+	search: string
+	before: string
+	after: string
 }
 
 export const Actions = {
 	addNote: (title: string, content: string, id: string) =>
 		({
 			type: ADD_NOTE,
-			payload: { title, content, id },
+			payload: { title, content, id, search: '', before: '', after: '' },
 		} as const),
 	saveNote: (title: string, content: string, id: string) =>
 		({
 			type: SAVE_NOTE,
-			payload: { title, content, id },
+			payload: { title, content, id, search: '', before: '', after: '' },
 		} as const),
 	deleteNote: (id: string) =>
 		({

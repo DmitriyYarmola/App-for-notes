@@ -4,7 +4,6 @@ import { Actions } from '../models/actions'
 import { message } from 'antd'
 import { useHistory } from 'react-router-dom'
 import { Editor } from '../../../Ui/Organisms/Content/Editor/index'
-import nextId from 'react-id-generator'
 import 'easymde/dist/easymde.min.css'
 
 type PropsType = {

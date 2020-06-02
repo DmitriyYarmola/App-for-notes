@@ -1,6 +1,6 @@
 import React from 'react'
 import SimpleMDE from 'react-simplemde-editor'
-import SimpleMDEEditor from 'react-simplemde-editor'
+import './style.sass'
 import {
 	toggleBlockquote,
 	toggleBold,
@@ -10,10 +10,8 @@ import {
 	drawTable,
 	drawHorizontalRule,
 	toggleOrderedList,
-	cleanBlock,
 	togglePreview,
 	drawLink,
-	toggleSideBySide,
 	toggleHeadingSmaller,
 } from 'easymde'
 

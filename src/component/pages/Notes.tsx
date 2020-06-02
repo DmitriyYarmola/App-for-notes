@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { SideBar } from './../Ui/Templates/SideBar/index'
+import { SideBar } from '../features/SideBar/index'
 import { NoteContent } from '../Ui/Templates/ContentNote/index'
 import { useSelector, useDispatch } from 'react-redux'
 import { AppStateType } from '../features/Note/models/store'

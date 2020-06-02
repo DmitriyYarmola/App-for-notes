@@ -1,7 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { Menu } from 'antd'
-import Item from 'antd/lib/list/Item'
 
 type PropsType = {
 	id: string

@@ -5,7 +5,7 @@ dbReq.onupgradeneeded = (event) => {
 	// Зададим переменной db ссылку на базу данных
 	db = event.target.result
 	// Создадим хранилище объектов с именем notes.
-	let notes = db.createObjectStore('notes', { autoIncrement: true })
+	db.createObjectStore('notes', { autoIncrement: true })
 }
 dbReq.onsuccess = (event) => {
 	db = event.target.result
