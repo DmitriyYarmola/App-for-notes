@@ -4,16 +4,18 @@ import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { AppStateType } from '../Note/models/store'
 import { Input } from '../../Ui/Atoms/index'
+import { MenuUnfoldOutlined, MenuFoldOutlined, FileOutlined } from '@ant-design/icons'
 import nextId from 'react-id-generator'
 import 'antd/dist/antd.css'
 import './style.sass'
 
-const { Sider } = Layout
+const { Sider, Header } = Layout
 
 export const SideBar = () => {
 	const notes = useSelector((state: AppStateType) => state.notesReducer.notes)
 
 	const [inputContent, setInputContent] = useState('')
+	const [collapsed, setCollapsed] = useState(false)
 
 	const notesList = notes.map((note) => {
 		return (
@@ -53,31 +55,66 @@ export const SideBar = () => {
 			)
 		)
 	})
+
+	const onCollapse = () => {
+		setCollapsed(!collapsed)
+	}
+
 	return (
 		<>
-			<Sider
-				style={{
-					overflow: 'auto',
-					height: '100%',
-					position: 'fixed',
-					left: 0,
-				}}
-			>
-				<Menu theme='dark' mode='inline' defaultSelectedKeys={['4']}>
-					<Input
-						value={inputContent}
-						onChange={onChangeInputContent}
-						placeholder={'input your note'}
-						className={'input-search'}
-					/>
-					<Menu.Item key={nextId()}>
-						<NavLink to={'/create'} className='create-note_item'>
-							Create New Note
-						</NavLink>
-					</Menu.Item>
-					{!inputContent ? notesList : searchItems}
-				</Menu>
-			</Sider>
+			{/* Here must be MenuComponent with SideBar/Menu/Desktop or Mobile. But it create few problmes*/}
+
+			<div className='desktop-menu'>
+				<Layout>
+					<Sider
+						trigger={null}
+						collapsible
+						collapsed={collapsed}
+						style={{
+							overflow: 'auto',
+							height: '100%',
+							position: 'fixed',
+							left: 0,
+						}}
+					>
+						<Menu theme='dark' mode='inline' defaultSelectedKeys={['1']}>
+							<Input
+								value={inputContent}
+								onChange={onChangeInputContent}
+								placeholder={'input your note'}
+								className={'input-search'}
+							/>
+							<Menu.Item key={nextId()}>
+								<NavLink to={'/create'} className='create-note_item'>
+									Create New Note
+								</NavLink>
+							</Menu.Item>
+							{!inputContent ? notesList : searchItems}
+						</Menu>
+					</Sider>
+				</Layout>
+			</div>
+
+			<div className='mobile-menu'>
+				<Layout>
+					<Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+						<Input
+							value={inputContent}
+							onChange={onChangeInputContent}
+							placeholder={'input your note'}
+							className={'input-search'}
+						/>
+						<Menu theme='dark' mode='horizontal' defaultSelectedKeys={['2']}>
+							<Menu.Item key={nextId()}>
+								<NavLink to={'/create'} className='create-note_item'>
+									Create New Note
+								</NavLink>
+							</Menu.Item>
+							{!inputContent ? notesList : searchItems}
+						</Menu>
+					</Header>
+				</Layout>
+			</div>
 		</>
 	)
 }
